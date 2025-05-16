@@ -8,19 +8,21 @@ import type { EntryContext } from "@remix-run/node";
 import { RemixServer } from "@remix-run/react";
 import { renderToString } from "react-dom/server";
 
+// This simpler version avoids dynamic requires that can cause issues
 export default function handleRequest(
   request: Request,
   responseStatusCode: number,
   responseHeaders: Headers,
   remixContext: EntryContext
 ) {
-  const markup = renderToString(
+  // Render the React app
+  let markup = renderToString(
     <RemixServer context={remixContext} url={request.url} />
   );
 
+  // Add the doctype and return
   responseHeaders.set("Content-Type", "text/html");
-
-  return new Response("<!DOCTYPE html>" + markup, {
+  return new Response(`<!DOCTYPE html>${markup}`, {
     status: responseStatusCode,
     headers: responseHeaders,
   });

@@ -9,5 +9,8 @@ module.exports = {
   serverBuildPath: "build/index.js",
   server: process.env.NODE_ENV === "development" ? undefined : "./server.js",
   future: {},
-  serverDependenciesToBundle: [/^(?!@remix-run|react|react-dom).*$/],
+  serverDependenciesToBundle: [
+    /^(?!react|react-dom).*/,
+    "@remix-run/node"
+  ]
 } 
