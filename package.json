@@ -9,14 +9,10 @@
   "sideEffects": false,
   "type": "module",
   "scripts": {
-    "prepare": "tomer install",
-    "format": "tomer format",
-    "lint": "tomer lint",
-    "typecheck": "tomer typecheck",
-    "test": "tomer test",
     "build": "remix build",
     "dev": "remix dev --manual",
-    "start": "remix-serve ./build/index.js"
+    "start": "remix-serve ./build/index.js",
+    "typecheck": "tsc"
   },
   "dependencies": {
     "@conform-to/react": "^1.1.5",
@@ -26,10 +22,8 @@
     "@remix-run/node": "^2.16.6",
     "@remix-run/react": "^2.16.6",
     "@remix-run/serve": "^2.16.6",
-    "@vercel/remix": "^2.16.6",
     "isbot": "^5.1.13",
     "lfi": "^3.2.0",
-    "memoize": "^10.0.0",
     "parse-english": "^7.0.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
@@ -38,8 +32,6 @@
     "zod": "^3.23.8"
   },
   "devDependencies": {
-    "@fast-check/vitest": "^0.1.2",
-    "@flydotio/dockerfile": "^0.5.8",
     "@remix-run/dev": "^2.16.6",
     "@tailwindcss/forms": "^0.5.7",
     "@tailwindcss/typography": "^0.5.13",
@@ -47,17 +39,13 @@
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "autoprefixer": "^10.4.19",
-    "cssnano": "^7.0.4",
     "eslint": "^8.57.0",
-    "got": "^14.4.2",
+    "postcss": "^8.4.40",
     "postcss-import": "^16.1.0",
     "prettier": "^3.3.3",
     "prettier-plugin-tailwindcss": "^0.6.5",
     "tailwindcss": "^3.4.7",
-    "tomer": "^4.0.1",
-    "ts-node": "^10.9.2",
-    "typescript": "^5.5.4",
-    "vitest": "^2.0.5"
+    "typescript": "^5.5.4"
   },
   "engines": {
     "node": ">= 18"
