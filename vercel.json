@@ -1,15 +1,19 @@
 {
-  "version": 2,
-  "builds": [
-    {
-      "src": "api/index.js",
-      "use": "@vercel/node"
-    }
-  ],
+  "framework": "remix",
+  "installCommand": "pnpm install",
+  "buildCommand": "pnpm run build",
   "routes": [
     {
       "src": "/(.*)",
       "dest": "/api/index.js"
+    },
+    {
+      "src": "/build/(.*)",
+      "dest": "/build/$1"
+    },
+    {
+      "src": "/favicon.ico",
+      "dest": "/public/favicon.ico"
     }
   ]
 } 

@@ -1,13 +1,12 @@
-// api/index.js - This is a special file that Vercel will use as the entry point
-import { createRequestHandler } from "@vercel/remix";
+import { createRequestHandler } from "@remix-run/node";
+import * as build from "../build/index.js";
 
-// Use dynamic imports to avoid build-time errors
-export default async function handler(request, context) {
-  // This import happens at runtime, not build time
-  const build = await import('../build/index.js');
-  
-  return createRequestHandler({
+// Handle HTTP requests
+export default async function handler(request) {
+  const requestHandler = createRequestHandler({
     build,
-    mode: process.env.NODE_ENV
-  })(request, context);
+    mode: process.env.NODE_ENV,
+  });
+  
+  return requestHandler(request);
 } 
