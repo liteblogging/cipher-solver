@@ -17,7 +17,7 @@
     "build": "remix build",
     "dev": "remix dev --manual",
     "start": "remix-serve ./build/index.js",
-    "vercel-build": "remix build"
+    "vercel-build": "remix build && cp -r api .vercel/output/functions/"
   },
   "dependencies": {
     "@conform-to/react": "^1.1.5",

@@ -2,12 +2,15 @@
 
 import { createRequestHandler } from "@vercel/remix";
 
-// Import the built app
-import * as build from "./build/index.js";
+// This is a Vercel server that uses the request handler from @vercel/remix
+export default async function (request, context) {
+  // Import the build dynamically - this won't happen at build time
+  const build = await import('./build/index.js');
+  
+  const handler = createRequestHandler({
+    build,
+    mode: process.env.NODE_ENV,
+  });
 
-const handler = createRequestHandler({
-  build,
-  mode: process.env.NODE_ENV,
-});
-
-export default handler; 
+  return handler(request, context);
+} 

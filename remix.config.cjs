@@ -7,7 +7,7 @@ module.exports = {
   publicPath: "/build/",
   assetsBuildDirectory: "public/build",
   serverBuildPath: "build/index.js",
-  server: process.env.NODE_ENV === "development" ? undefined : "./server.js",
+  server: undefined,
   future: {},
   serverDependenciesToBundle: [
     /^(?!react|react-dom).*/,
