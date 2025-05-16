@@ -1,0 +1,15 @@
+{
+  "extends": "tomer/tsconfig",
+  "include": ["remix.env.d.ts", "**/*.ts", "**/*.tsx"],
+  "compilerOptions": {
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "allowImportingTsExtensions": true,
+    "baseUrl": ".",
+    "paths": {
+      "~/private/*": ["./private/*"],
+      "~/*": ["src/*"]
+    }
+  }
+}
