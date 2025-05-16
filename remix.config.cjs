@@ -1,7 +1,7 @@
 /** @type {import('@remix-run/dev').AppConfig} */
-export default {
+module.exports = {
   appDirectory: "src",
   ignoredRouteFiles: ["**/.*"],
   serverModuleFormat: "esm",
   future: {}
-}
+} 

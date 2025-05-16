@@ -1,19 +1,5 @@
 {
   "framework": "remix",
   "installCommand": "pnpm install",
-  "buildCommand": "pnpm run build",
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/api/index.js"
-    },
-    {
-      "src": "/build/(.*)",
-      "dest": "/build/$1"
-    },
-    {
-      "src": "/favicon.ico",
-      "dest": "/public/favicon.ico"
-    }
-  ]
+  "buildCommand": "pnpm run build"
 } 
