@@ -1,8 +1,17 @@
 import { nextTick } from 'node:process'
-import mem from 'mem'
 
+// Simple in-memory cache implementation without dependencies
 export const cache = <Value>(fn: () => Value): (() => Value) => {
-  const cachedFn = mem(fn)
+  let cachedValue: Value | undefined
+  let hasValue = false
+
+  const cachedFn = () => {
+    if (!hasValue) {
+      cachedValue = fn()
+      hasValue = true
+    }
+    return cachedValue as Value
+  }
 
   // Call and cache asynchronously to ensure dependencies are initialized.
   nextTick(cachedFn)
