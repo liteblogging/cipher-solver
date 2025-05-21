@@ -1,8 +1,11 @@
 [build]
   command = "npm install --no-frozen-lockfile && npm run build"
   publish = "public"
-  [build.environment]
-    NETLIFY_USE_NPM = "true"
+
+[build.environment]
+  NPM_FLAGS = "--no-frozen-lockfile"
+  NETLIFY_USE_NPM = "true"
+  NODE_VERSION = "18"
 
 [dev]
   command = "npm run dev"
