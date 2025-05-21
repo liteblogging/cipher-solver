@@ -37,7 +37,7 @@ jobs:
       - name: Upload to Deno Deploy
         uses: denoland/deployctl@v1
         with:
-          project: "cryptoquip"
+          project: "litebloggin-cipher-solv-59"
           entrypoint: "index.js"
           root: "build"
           
