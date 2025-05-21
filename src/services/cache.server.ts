@@ -1,5 +1,5 @@
 import { nextTick } from 'node:process'
-import { memoize } from '../utils/deno-compat'
+import memoize from 'memoize'
 
 export const cache = <Value>(fn: () => Value): (() => Value) => {
   const cachedFn = memoize(fn)

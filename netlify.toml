@@ -1,5 +1,5 @@
 [build]
-  command = "npm run build"
+  command = "npm install --no-frozen-lockfile && npm run build"
   publish = "public"
   [build.environment]
     NETLIFY_USE_NPM = "true"
@@ -7,6 +7,14 @@
 [dev]
   command = "npm run dev"
   port = 3000
+
+[functions]
+  included_files = ["build/public/**"]
+
+[[redirects]]
+  from = "/_assets/*"
+  to = "/build/_assets/:splat"
+  status = 200
 
 [[redirects]]
   from = "/*"
