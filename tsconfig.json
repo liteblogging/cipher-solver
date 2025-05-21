@@ -1,5 +1,4 @@
 {
-  "extends": "tomer/tsconfig",
   "include": ["remix.env.d.ts", "**/*.ts", "**/*.tsx"],
   "compilerOptions": {
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
@@ -10,6 +9,11 @@
     "paths": {
       "~/private/*": ["./private/*"],
       "~/*": ["src/*"]
-    }
+    },
+    "esModuleInterop": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "target": "ESNext",
+    "isolatedModules": true
   }
 }
